@@ -1,0 +1,18 @@
+.top {
+  height: 123px;
+  background-color: #3556ab;
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  color: #ffffff;
+  justify-content: center;
+  padding-top: 17px;
+}
+.top h3 {
+  text-shadow: 1px 3px var(--primary-color);
+  font-size: 24px;
+}
+
+.buttons {
+  align-self: end;
+}
