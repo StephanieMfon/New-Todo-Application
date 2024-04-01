@@ -100,6 +100,9 @@
   padding-inline: 60px 30px;
   align-items: center;
 }
+.menu_item:hover {
+  border: 1px solid #3556ab;
+}
 .menu_item .left {
   display: flex;
   gap: 30px;
@@ -115,7 +118,11 @@
   background-color: #ffffff;
   border-radius: 5px;
 }
-
+.edit_button:hover {
+  border: 1px solid #071d55;
+  background: #071d55;
+  color: #ffffff;
+}
 .button_wrapper {
   align-self: flex-end;
 }

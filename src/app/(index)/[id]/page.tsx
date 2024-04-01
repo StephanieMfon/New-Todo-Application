@@ -4,6 +4,7 @@ import styles from "./page.module.css";
 import { addTodo, deleteTodo, getTodos, updateTodo } from "@/app/redux/actions";
 import { connect } from "react-redux";
 import { useDispatch } from "react-redux";
+import { usePathname } from "next/navigation";
 
 export interface Todo {
   id: number;
@@ -37,23 +38,21 @@ const SingleTodo = ({
   const handleUpdateClick = (id: number) => {
     const idAsString = String(params.id);
 
-    const updatedTodo = todos.filter((todo) => String(todo.id) === idAsString);
-    console.log(updatedTodo);
-    // if (updatedTodo) {
-    dispatch(
-      updateTodo({
-        ...updatedTodo,
-        title: inputValue,
-      })
-    );
+    const singleTodo = todos.filter((todo) => String(todo.id) === idAsString);
 
-    // Update local storage
+    const updatedTodo = {
+      id: singleTodo[0].id,
+      title: inputValue,
+      completed: singleTodo[0].completed,
+    };
+    updateTodo(updatedTodo);
+    // );
+
     localStorage.setItem(
       "todos",
       JSON.stringify(
         todos.map((todo) => {
           if (String(todo.id) === idAsString) {
-            console.log("Updating todo with ID:", todo.id);
             return { ...todo, title: inputValue };
           }
           return todo;
@@ -88,10 +87,9 @@ const SingleTodo = ({
   const handleDeleteClick = (e: any) => {
     e.preventDefault();
     console.log(params.id);
-    // Convert params.id to string for comparison
     const idAsString = String(params.id);
 
-    dispatch(deleteTodo(idAsString)); // Find all todos with the specified ID
+    dispatch(deleteTodo(idAsString));
     const updatedTodos = todos.filter((todo) => String(todo.id) !== idAsString);
     console.log("Updated Todos:", updatedTodos);
 

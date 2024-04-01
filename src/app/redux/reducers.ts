@@ -22,9 +22,11 @@ export const todoReducer = (state = initialState, action: any) => {
     //   );
     case UPDATE_TODO:
       console.log("helloewlkfn");
+      console.log(action.payload);
       const updatedArray = state.map((todo) => {
         if (String(todo.id) === String(action.payload.id)) {
           console.log("Updating todo with ID:", todo.id);
+          console.log(action.payload.title);
           return { ...todo, title: action.payload.title };
         }
         return todo;

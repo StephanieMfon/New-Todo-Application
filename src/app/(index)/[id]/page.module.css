@@ -61,7 +61,12 @@
   border: 2px solid #720d0d;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
-
+.delete:hover {
+  border: 1px solid #720d0d;
+  background: #ffffff;
+  color: #720d0d;
+  text-shadow: none;
+}
 .save {
   width: 100%;
   background: #3556ab;
@@ -74,4 +79,10 @@
   text-shadow: 1px 3px var(--primary-color);
   border: 1px solid #0d2972;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+.save:hover {
+  border: 1px solid #0d2972;
+  background: #ffffff;
+  color: #0d2972;
+  text-shadow: none;
 }
