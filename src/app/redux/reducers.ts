@@ -9,29 +9,18 @@ export const todoReducer = (state = initialState, action: any) => {
     case ADD_TODO:
       return [...state, action.payload];
     case DELETE_TODO:
-      console.log("helloce");
       const updatedTodos = state.filter(
         (todo: Todo) => String(todo.id) !== String(action.payload)
       );
-      console.log(updatedTodos);
       return updatedTodos;
 
-    // case UPDATE_TODO:
-    //   return state.map((todo: Todo) =>
-    //     todo.id === action.payload.id ? action.payload : todo
-    //   );
     case UPDATE_TODO:
-      console.log("helloewlkfn");
-      console.log(action.payload);
       const updatedArray = state.map((todo) => {
         if (String(todo.id) === String(action.payload.id)) {
-          console.log("Updating todo with ID:", todo.id);
-          console.log(action.payload.title);
           return { ...todo, title: action.payload.title };
         }
         return todo;
       });
-      console.log(updatedArray);
       return updatedArray;
     case GET_TODOS:
       const storedTodos = localStorage.getItem("todos");

@@ -35,9 +35,7 @@ const SingleTodo = ({
   }, []);
 
   useEffect(() => {
-    console.log("Todos:", todos);
     const singleTodo = todos.filter((todo) => String(todo.id) === idAsString);
-    console.log(singleTodo[0]);
     setInputValue(singleTodo[0]?.title);
   }, [todos]);
 
@@ -72,9 +70,7 @@ const SingleTodo = ({
 
   const handleSaveClick = (event: any) => {
     event.preventDefault();
-    console.log(params.id);
 
-    console.log(!isNaN(params.id));
     if (!isNaN(params.id)) {
       handleUpdateClick(params.id);
     } else {
@@ -89,17 +85,14 @@ const SingleTodo = ({
 
       localStorage.setItem("todos", JSON.stringify([...todos, newTodo]));
     }
-    console.log(inputValue);
   };
 
   const handleDeleteClick = (e: any) => {
     e.preventDefault();
-    console.log(params.id);
     const idAsString = String(params.id);
 
     dispatch(deleteTodo(idAsString));
     const updatedTodos = todos.filter((todo) => String(todo.id) !== idAsString);
-    console.log("Updated Todos:", updatedTodos);
 
     localStorage.setItem("todos", JSON.stringify(updatedTodos));
   };
