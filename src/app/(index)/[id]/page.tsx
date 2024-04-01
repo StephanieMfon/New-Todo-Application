@@ -93,6 +93,7 @@ const SingleTodo = ({
 
     dispatch(deleteTodo(idAsString));
     const updatedTodos = todos.filter((todo) => String(todo.id) !== idAsString);
+    setInputValue("");
 
     localStorage.setItem("todos", JSON.stringify(updatedTodos));
   };
