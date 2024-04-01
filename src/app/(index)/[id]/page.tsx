@@ -26,18 +26,26 @@ const SingleTodo = ({
   updateTodo: any;
 }) => {
   const [inputValue, setInputValue] = useState<string>("");
+
+  const idAsString = String(params.id);
+
   const dispatch = useDispatch();
   useEffect(() => {
     getTodos();
   }, []);
+
+  useEffect(() => {
+    console.log("Todos:", todos);
+    const singleTodo = todos.filter((todo) => String(todo.id) === idAsString);
+    console.log(singleTodo[0]);
+    setInputValue(singleTodo[0]?.title);
+  }, [todos]);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value);
   };
 
   const handleUpdateClick = (id: number) => {
-    const idAsString = String(params.id);
-
     const singleTodo = todos.filter((todo) => String(todo.id) === idAsString);
 
     const updatedTodo = {
