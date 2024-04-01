@@ -1,5 +1,13 @@
+"use client";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
+
 const SingleTodo = ({ params }: { params: { id: string } }) => {
-  return <h1>Hello World</h1>;
+  useEffect(() => {
+    router.push("http://localhost:3000/new-todo");
+  }, []);
+  const router = useRouter();
+  return;
 };
 
 export default SingleTodo;
