@@ -1,18 +1,77 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+
 .top {
   height: 123px;
   background-color: #3556ab;
   display: flex;
-  /* flex-direction: column; */
   align-items: center;
   color: #ffffff;
   justify-content: center;
   padding-top: 17px;
+  box-shadow: inset -10px 0px 10px -12px rgba(0, 0, 0, 0.19);
 }
 .top h3 {
   text-shadow: 1px 3px var(--primary-color);
   font-size: 24px;
 }
 
+/* Middle */
+
+.middle {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px 55px 0 16px;
+}
+.task_name {
+  color: #000000;
+  letter-spacing: 1.5px;
+  font-size: 16px;
+}
+
+.task {
+  width: 100%;
+  border: 2px solid #cbcbcb;
+  padding: 20px 10px;
+  border-radius: 5px;
+  font-size: 20px;
+  color: var(--primary-color);
+  background-color: #ffffff;
+}
+
+/* Buttons */
+
 .buttons {
-  align-self: end;
+  display: flex;
+  gap: 12px;
+  padding: 0 35px 20px 16px;
+}
+.delete {
+  padding: 25px 55px;
+  background-color: #ab3535;
+  color: #ffffff;
+  border-radius: 5px;
+  font-size: 18px;
+  text-shadow: 1px 3px var(--primary-color);
+  border: 2px solid #720d0d;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.save {
+  width: 100%;
+  background: #3556ab;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  border-radius: 5px;
+  font-size: 18px;
+  text-shadow: 1px 3px var(--primary-color);
+  border: 1px solid #0d2972;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }

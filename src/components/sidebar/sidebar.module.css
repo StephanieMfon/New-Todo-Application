@@ -3,8 +3,11 @@
   display: grid;
   grid-template-columns: 424px repeat(4, 1fr);
   grid-auto-columns: 200px;
+  background-color: #f5f5f5;
 }
-
+.navigation button {
+  cursor: pointer;
+}
 .left_sidebar {
   grid-column-start: 1;
   grid-column-end: 2;
@@ -13,7 +16,7 @@
   overflow-y: hidden;
   display: flex;
   flex-direction: column;
-  background-color: #f5f5f5;
+  justify-content: space-between;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 .profile_section {
@@ -23,8 +26,10 @@
   gap: 19px;
   color: #ffffff;
   padding: 17px 15px 0 30px;
-  box-shadow: inset rgba(0, 0, 0, 0.19) 0px 0px 60px -12px,
-    -10px 0 20px rgba(0, 0, 0, 0.19);
+
+  /* box-shadow: inset rgba(0, 0, 0, 0.19) 0px 0px 60px -12px,
+    -10px 0 20px rgba(0, 0, 0, 0.19); */
+  border-right: 1px solid #243f84;
 }
 .profile_image {
   max-width: 100%;
@@ -50,7 +55,7 @@
 /* Upgrade Section */
 
 .upgrade_section_wrapper {
-  border: 2px solid #a09f9f;
+  border: 2px solid #9eb031;
 }
 .upgrade_section {
   display: flex;
@@ -80,6 +85,9 @@
   align-items: center;
   gap: 24px;
 }
+.active {
+  border: 1px solid #3556ab;
+}
 .menu_item {
   width: 90%;
   display: flex;
@@ -107,11 +115,18 @@
   background-color: #ffffff;
   border-radius: 5px;
 }
-/* Button */
+
+.button_wrapper {
+  align-self: flex-end;
+}
 .button_icon {
   width: 60px;
   height: 61px;
-  align-self: flex-end;
+  margin: 0 10px 15px 0;
+  transition: transfrom 2s;
+}
+.button_icon:hover {
+  transform: scale(1.1);
 }
 .main_content {
   height: 100vh;
